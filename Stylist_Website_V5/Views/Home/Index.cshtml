@@ -1,0 +1,42 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Stylist_Web</title>
+
+    <link rel="stylesheet" href="~/css/zerogrid.css">
+    <link rel="stylesheet" href="~/css/style.css">
+    <link rel="stylesheet" href="~/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="~/css/zerostyle.css">
+    <link rel="stylesheet" href="~/css/mb-comingsoon-iceberg.css">
+</head>
+<body>
+    <div>
+        <h3>Зарегистрированные заявки</h3>
+        <table>
+            <tr>
+                <td><p>Id</p></td>
+                <td><p>Name</p></td>
+                <td><p>Email</p></td>
+                <td><p>Message</p></td>
+                <td></td>
+            </tr>
+            @foreach (var b in ViewBag.CallBacks)
+            {
+                <tr>
+                    <td><p>@b.Id</p></td>
+                    <td><p>@b.Name</p></td>
+                    <td><p>@b.Email</p></td>
+                    <td><p>@b.Message</p></td>
+                    <td><p><a href="~/Home/Reg/@b.Id">Ответить</a></p></td>
+                </tr>
+            }
+        </table>
+    </div>
+</body>
+</html>
